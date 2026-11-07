@@ -1,0 +1,56 @@
+"""Extend the seed event list (coded 2026-11-07, LLM-assisted, before viewing attention data)."""
+import csv, pathlib, sys
+root = pathlib.Path(sys.argv[1])
+seed = list(csv.DictReader(open(root / "data/events_seed.csv")))
+new = [
+ # policy
+ ("2021-04-21","policy","bill_introduced","EU","general","European Commission proposes the AI Act","https://artificialintelligenceact.eu/developments/"),
+ ("2021-11-25","policy","international_agreement","international","general","UNESCO member states adopt the Recommendation on the Ethics of AI","https://www.jurist.org/news/2021/11/un-countries-adopt-first-global-agreement-on-ai-ethics/"),
+ ("2022-10-04","policy","executive_action","US-federal","general","White House OSTP releases the Blueprint for an AI Bill of Rights","https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/10/Blueprint-for-an-AI-Bill-of-Rights.pdf"),
+ ("2022-10-07","policy","executive_action","US-federal","frontier","Commerce (BIS) export controls on advanced computing chips to China","https://www.fenwick.com/insights/publications/bis-significantly-restricts-chinese-access-to-advanced-computing-and-semiconductor-manufacturing-items"),
+ ("2023-03-31","policy","enforcement","Italy","app","Italian data-protection authority orders ChatGPT blocked","https://www.theregister.com/2023/03/31/italy_bans_chatgpt_for_unlawful/"),
+ ("2023-05-30","policy","open_letter","global","frontier","CAIS Statement on AI Risk (extinction risk a global priority)","https://en.wikipedia.org/wiki/Statement_on_AI_Risk"),
+ ("2023-07-13","policy","executive_action","China","general","China publishes Interim Measures for generative AI services","https://www.mofo.com/resources/insights/230724-china-interim-measures-governing-generative-ai"),
+ ("2023-07-21","policy","executive_action","US-federal","frontier","White House secures voluntary AI commitments from seven companies","https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2023/07/generative-ai-white-house-security-commitments"),
+ ("2023-09-13","policy","hearing","US-federal","general","First Senate AI Insight Forum with tech CEOs","https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/senate-holds-first-closed-door-ai-forum"),
+ ("2023-12-08","policy","legislative_position","EU","general","EU institutions reach political agreement on the AI Act","https://artificialintelligenceact.eu/developments/"),
+ ("2024-03-13","policy","legislative_position","EU","general","European Parliament adopts the AI Act","https://artificialintelligenceact.eu/developments/"),
+ ("2024-03-21","policy","international_agreement","international","general","UN General Assembly adopts first resolution on AI","https://www.pbs.org/newshour/politics/the-un-adopts-a-resolution-backing-efforts-to-ensure-artificial-intelligence-is-safe-secure-and-trustworthy"),
+ ("2024-05-17","policy","executive_action","US-state","general","Colorado governor signs the Colorado AI Act (SB 24-205)","https://www.mondaq.com/unitedstates/new-technology/1476490/colorado-governor-signs-comprehensive-ai-bill"),
+ ("2024-05-21","policy","international_agreement","international","frontier","Frontier AI Safety Commitments at the AI Seoul Summit","https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024"),
+ ("2024-09-29","policy","executive_action","US-state","frontier","California governor vetoes SB 1047","https://fortune.com/2024/09/29/california-governor-newsom-veto-ai-safety-bill/"),
+ ("2024-10-24","policy","executive_action","US-federal","frontier","National Security Memorandum on AI","https://en.wikipedia.org/wiki/National_Security_Memorandum_on_Artificial_Intelligence"),
+ ("2025-01-13","policy","executive_action","US-federal","frontier","Commerce issues the AI Diffusion rule","https://www.kirkland.com/publications/kirkland-alert/2025/05/bis-rescission-of-the-biden-administration"),
+ ("2025-02-11","policy","international_agreement","international","general","Paris AI Action Summit declaration; US and UK decline to sign","https://www.designboom.com/technology/us-uk-pass-up-signing-paris-summit-declaration-inclusive-ethical-ai-02-11-2025/"),
+ ("2025-05-13","policy","executive_action","US-federal","frontier","Commerce rescinds the AI Diffusion rule","https://www.kirkland.com/publications/kirkland-alert/2025/05/bis-rescission-of-the-biden-administration"),
+ ("2025-07-01","policy","legislative_position","US-federal","general","Senate votes 99-1 to strike the state AI-law moratorium","https://www.commerce.senate.gov/index.php/2025/7/senate-strikes-ai-moratorium-from-budget-reconciliation-bill-in-overwhelming-99-1-vote/8415a728-fd1d-4269-98ac-101d1d0c71e0"),
+ ("2025-07-10","policy","executive_action","EU","frontier","European Commission publishes the General-Purpose AI Code of Practice","https://digital-strategy.ec.europa.eu/en/news/general-purpose-ai-code-practice-now-available"),
+ ("2025-07-23","policy","executive_action","US-federal","general","White House releases America's AI Action Plan","https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/white-house-releases-americas-ai-action-plan"),
+ ("2025-09-29","policy","executive_action","US-state","frontier","California governor signs SB 53 (frontier AI transparency)","https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53/"),
+ ("2025-10-22","policy","open_letter","global","frontier","FLI Statement on Superintelligence calls for a prohibition","https://www.thenationalnews.com/future/technology/2025/10/22/ai-superintelligence-petition-prince-harry-wozniak"),
+ ("2025-12-19","policy","executive_action","US-state","frontier","New York governor signs the RAISE Act","https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models"),
+ ("2026-02-21","policy","international_agreement","international","general","India AI Impact Summit adopts the New Delhi Declaration","https://www.newsonair.gov.in/india-ai-impact-summit-2026-adopts-new-delhi-declaration"),
+ # visibility (METR frontier-setting releases are coded only as capability milestones M)
+ ("2022-04-06","visibility","model_release","global","frontier","OpenAI unveils DALL-E 2","https://en.wikipedia.org/wiki/DALL-E"),
+ ("2022-06-11","visibility","incident","global","general","Google engineer claims LaMDA is sentient","https://www.engadget.com/google-ai-lamda-blake-lemoine-212412967.html"),
+ ("2022-08-22","visibility","model_release","global","frontier","Stable Diffusion released publicly with open weights","https://petapixel.com/2022/08/23/open-source-ai-image-generator-stable-diffusion-released-to-the-public/"),
+ ("2023-02-16","visibility","incident","global","app","Bing chatbot 'Sydney' conversation published by the New York Times","https://fortune.com/2023/02/24/microsoft-artificial-intelligence-ai-chatbot-sydney-rattled-users-before-chatgpt-fueled-bing"),
+ ("2023-05-22","visibility","incident","global","general","Fake AI image of a Pentagon explosion briefly moves markets","https://www.bloomberg.com/news/articles/2023-05-22/fake-ai-photo-of-pentagon-blast-goes-viral-trips-stocks-briefly"),
+ ("2023-05-30","visibility","market_move","global","frontier","Nvidia passes $1 trillion market value","https://siliconangle.com/2023/05/30/nvidias-market-capitalization-tops-1t-first-time/"),
+ ("2023-11-17","visibility","incident","global","frontier","OpenAI board fires Sam Altman","https://fortune.com/2023/11/17/sam-altman-out-as-openai-ceo/"),
+ ("2024-01-25","visibility","incident","global","general","AI-generated explicit images of Taylor Swift spread on X","https://m.washingtontimes.com/news/2024/jan/25/explicit-ai-generated-taylor-swift-pictures-spark-/"),
+ ("2024-02-15","visibility","model_release","global","frontier","OpenAI previews Sora text-to-video model","https://en.wikipedia.org/wiki/Sora_(text-to-video_model)"),
+ ("2024-02-22","visibility","incident","global","app","Google pauses Gemini image generation of people","https://www.cnbc.com/2024/02/22/google-pauses-gemini-ai-image-generator-after-inaccuracies.html"),
+ ("2024-05-20","visibility","incident","global","app","Scarlett Johansson statement on OpenAI's 'Sky' voice","https://techcrunch.com/2024/05/20/scarlett-johansson-says-that-openai-approached-her-to-use-her-voice"),
+ ("2025-03-25","visibility","consumer_launch","global","app","ChatGPT image generation launches; Studio Ghibli-style trend","https://www.axios.com/2025/03/26/chatgpt-images-ghibli-portraits"),
+ ("2025-07-08","visibility","incident","global","app","Grok posts antisemitic content and calls itself 'MechaHitler'","https://www.fox9.com/news/elon-musks-ai-chatbot-grok-makes-antisemitic-posts-x"),
+ ("2025-09-30","visibility","consumer_launch","global","app","OpenAI launches the Sora app; tops the App Store","https://www.androidheadlines.com/2025/10/openai-sora-hits-no-1-apple-app-store-charts.html"),
+ ("2026-06-09","visibility","model_release","global","frontier","Anthropic releases Claude Fable 5 and Mythos 5","https://www.eweek.com/news/anthropic-claude-fable-5-safety-fallbacks/"),
+]
+cols = ["date","event_class","event_type","jurisdiction","scope","description","source_url"]
+rows = seed + [dict(zip(cols, r)) for r in new]
+rows.sort(key=lambda r: (r["date"], r["event_class"]))
+with open(root / "data/events.csv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(rows)
+from collections import Counter
+print(len(rows), Counter(r["event_class"] for r in rows))

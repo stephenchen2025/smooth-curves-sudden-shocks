@@ -1,0 +1,23 @@
+date,event_class,event_type,jurisdiction,scope,description,source_url
+2022-11-30,visibility,consumer_launch,global,frontier,ChatGPT released as a free research preview,https://openai.com/blog/chatgpt
+2023-03-22,policy,open_letter,global,frontier,FLI open letter calls for a 6-month pause on training systems beyond GPT-4,https://en.wikipedia.org/wiki/Pause_Giant_AI_Experiments:_An_Open_Letter
+2023-05-16,policy,hearing,US-federal,frontier,Senate Judiciary subcommittee hearing 'Oversight of AI' with OpenAI CEO,https://dig.watch/?p=133769
+2023-06-14,policy,legislative_position,EU,frontier,European Parliament adopts negotiating position adding foundation-model provisions to the AI Act,https://crfm.stanford.edu/2024/08/01/eu-ai-act.html
+2023-10-30,policy,executive_action,US-federal,frontier,Executive Order 14110 sets 10^26-operation reporting threshold,https://hai.stanford.edu/news/decoding-white-house-ai-executive-orders-achievements
+2023-11-01,policy,international_agreement,international,frontier,Bletchley Declaration signed at UK AI Safety Summit,https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration
+2025-01-20,visibility,model_release,global,frontier,DeepSeek-R1 released with open weights,https://darioamodei.com/post/on-deepseek-and-export-controls
+2025-01-20,policy,executive_action,US-federal,frontier,Executive Order 14110 revoked,https://tech-insider.org/us-ai-policy-crisis-federal-state-patchwork-2026/
+2025-01-27,visibility,market_move,global,frontier,Nvidia loses about $589B of market value in one day,https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-loses-usd589-billion-in-market-cap-broad-stock-plunge-triggered-by-deepseek-ai-release
+2025-01-30,policy,enforcement,Italy,app,Italian data-protection authority orders DeepSeek blocked,https://thedayafterai.squarespace.com/featured/deepseek-ai-banned-in-multiple-countries-over-data-privacy-security-concerns
+2025-01-31,policy,executive_action,US-state,app,Texas bans DeepSeek on state government devices,https://sustainabletechpartner.com/?p=13887
+2025-02-04,policy,executive_action,Australia,app,Australia bans DeepSeek on government devices,https://sustainabletechpartner.com/?p=13887
+2025-02-06,policy,bill_introduced,US-federal,app,No DeepSeek on Government Devices Act introduced (H.R. 1121),https://thedayafterai.squarespace.com/featured/deepseek-ai-banned-in-multiple-countries-over-data-privacy-security-concerns
+2025-12-11,policy,executive_action,US-federal,general,Executive order on a national AI policy framework directs challenges to state AI laws,https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation
+2026-06-12,policy,executive_action,US-federal,frontier,Commerce export-control directive suspends foreign access to Claude Fable 5 and Mythos 5,https://casrai.org/news/anthropic-fable-mythos-export-control-suspension
+2026-06-30,policy,executive_action,US-federal,frontier,Commerce withdraws the June 12 directive after safeguard testing,https://casrai.org/news/anthropic-fable-mythos-export-control-suspension
+2026-07-16,visibility,incident,global,frontier,Hugging Face discloses intrusion by an autonomous agent,https://en.wikipedia.org/wiki/OpenAI%E2%80%93Hugging_Face_incident
+2026-07-21,visibility,incident,global,frontier,OpenAI attributes the Hugging Face intrusion to its own agents,https://en.wikipedia.org/wiki/OpenAI%E2%80%93Hugging_Face_incident
+2026-07-23,policy,bill_introduced,US-federal,frontier,AI Kill Switch Act introduced,https://www.cnbc.com/2026/07/23/open-ai-hugging-face-hack-kill-switch-bill-congress.html
+2026-07-28,policy,open_letter,global,frontier,'Pacing the Frontier' open letter from 1100+ AI lab employees,https://en.wikipedia.org/wiki/OpenAI%E2%80%93Hugging_Face_incident
+2026-08-18,policy,industry_action,US,frontier,OpenAI announces slowdown and two-week RL training pause,https://en.wikipedia.org/wiki/OpenAI%E2%80%93Hugging_Face_incident
+2026-09-03,policy,bill_announced,US-federal,frontier,Ban Artificial Superintelligence Act announced,https://en.wikipedia.org/wiki/OpenAI%E2%80%93Hugging_Face_incident

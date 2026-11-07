@@ -1,0 +1,7 @@
+data,sample,shock,trend_doubling_months_full,n_models,n_pre,n_post,pre_doubling_months,mean_error_doublings,p_joint,break_wald,break_p,placebo_share_as_large,placebo_n,note
+TH 1.1,frontier,ChatGPT launch,4.229775838539146,14,0.0,3.0,,,,,,,,
+TH 1.1,frontier,DeepSeek-R1 release,4.229775838539146,14,7.0,7.0,6.473533198143141,1.7758874704416066,0.3552127371335684,5.573595575064683,0.023644849031766554,0.36363636363636365,11.0,
+TH 1.1,frontier,Hugging Face intrusion attributed,4.229775838539146,14,,,,,,,,,,after last model in data
+TH 1.1,all models,ChatGPT launch,4.052920347939693,20,0.0,5.0,,,,,,,,
+TH 1.1,all models,DeepSeek-R1 release,4.052920347939693,20,9.0,11.0,6.165476157908943,1.768801649438419,0.7567375310849525,3.768859455945774,0.04558740630770122,0.3888888888888889,18.0,
+TH 1.1,all models,Hugging Face intrusion attributed,4.052920347939693,20,,,,,,,,,,after last model in data
